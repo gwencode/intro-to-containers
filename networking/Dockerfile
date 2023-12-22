@@ -1,5 +1,7 @@
 FROM node:12-stretch
 
+RUN npm install -g nodemon
+
 USER node
 
 WORKDIR /home/node/code
@@ -10,4 +12,4 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-CMD [ "node", "index.js" ]
+CMD [ "nodemon", "index.js" ]
